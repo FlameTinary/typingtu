@@ -25,8 +25,6 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 200,
       child: _picturePath != null
           ? Container(
               decoration: BoxDecoration(

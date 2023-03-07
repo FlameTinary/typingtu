@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:typingtu/pages/select_picture_page.dart';
 
 class TYQuickPuzzlePage extends StatefulWidget {
   const TYQuickPuzzlePage({super.key});
@@ -18,9 +19,13 @@ class _TYQuickPuzzlePageState extends State<TYQuickPuzzlePage> {
           itemCount: 100,
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text('单图九宫格布局'),
+              title: const Text('单图九宫格布局'),
               onTap: () {
-                debugPrint('$index');
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const TYSelectPicturePage(),
+                  ),
+                );
               },
             );
           }),
