@@ -35,9 +35,8 @@ class _TYSelectPicturePageState extends State<TYSelectPicturePage> {
     });
   }
 
-  // 计算图片的宽高
+  // 计算图片的高度
   double calculateImageWidth(double screenW) {
-    double imageW = screenW * 0.8;
     double imageH = screenW * 0.8;
     switch (ratio) {
       case 0:
