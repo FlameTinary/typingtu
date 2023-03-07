@@ -13,7 +13,7 @@ class ImagePickerWidget extends StatefulWidget {
 }
 
 class _ImagePickerWidgetState extends State<ImagePickerWidget> {
-  XFile? _picture;
+  String? _picturePath;
   late TYPicture picture;
 
   @override
@@ -27,7 +27,7 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
     return Container(
       width: 200,
       height: 200,
-      child: _picture != null
+      child: _picturePath != null
           ? Container(
               decoration: BoxDecoration(
                 color: Colors.grey,
@@ -35,16 +35,16 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
               clipBehavior: Clip.antiAlias, // 裁剪
               child: PhotoView(
                 enablePanAlways: true, // 允许拖动
-                imageProvider: FileImage(File(_picture!.path)),
+                imageProvider: FileImage(File(_picturePath!)),
               ),
             )
           : GestureDetector(
               onTap: () {
                 try {
-                  picture.pickImage().then((value) {
-                    debugPrint(value?.path);
+                  picture.pickImage(context).then((value) {
+                    debugPrint(value?.first ?? 'null');
                     setState(() {
-                      _picture = value;
+                      _picturePath = value?.first;
                     });
                   });
                 } catch (e) {

@@ -1,11 +1,14 @@
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:typingtu/utils/picture.dart';
 import 'package:typingtu/widgets/image_picker.dart';
 import 'package:screenshot/screenshot.dart';
+import 'package:wechat_assets_picker/wechat_assets_picker.dart';
 
 void main() {
+  AssetPicker.registerObserve();
   runApp(const MyApp());
 }
 
@@ -34,20 +37,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   Uint8List? imageBytes;
   ScreenshotController screenshotController = ScreenshotController();
 
   void widgetToImage(BuildContext context) async {
     screenshotController
-        .capture(delay: Duration(milliseconds: 10))
+        .capture(delay: const Duration(milliseconds: 10))
         .then((capturedImage) async {
       setState(() {
         imageBytes = capturedImage;
       });
       TYPicture().saveImage(imageBytes);
     }).catchError((onError) {
-      print(onError);
+      debugPrint(onError);
     });
   }
 
@@ -57,9 +59,23 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        child: Screenshot(controller: screenshotController,
-        child: Center(child: ImagePickerWidget(),),),
+      body: Column(
+        children: [
+          Container(
+            child: Screenshot(
+              controller: screenshotController,
+              child: const Center(
+                child: ImagePickerWidget(),
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () async {
+              TYPicture().pickImage(context);
+            },
+            child: const Text('快速拼图'),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
