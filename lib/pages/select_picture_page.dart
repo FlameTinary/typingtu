@@ -1,9 +1,11 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:typingtu/widgets/circle_image.dart';
 import 'package:typingtu/widgets/image_picker.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:typingtu/utils/picture.dart';
+import 'package:typingtu/widgets/pentagon.dart';
 
 class TYSelectPicturePage extends StatefulWidget {
   const TYSelectPicturePage({super.key});
@@ -67,6 +69,18 @@ class _TYSelectPicturePageState extends State<TYSelectPicturePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: 200,
+              width: 200,
+              child: Pentagon(
+                // size: 100,
+                color: Colors.red,
+                child: const ImagePickerWidget(),
+              ),
+            ),
+            const SizedBox(
+              height: 100,
+            ),
             Screenshot(
               controller: screenshotController,
               child: SizedBox(

@@ -33,6 +33,7 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
               clipBehavior: Clip.antiAlias, // 裁剪
               child: PhotoView(
                 enablePanAlways: true, // 允许拖动
+                enableRotation: true, // 允许旋转
                 imageProvider: FileImage(File(_picturePath!)),
               ),
             )
