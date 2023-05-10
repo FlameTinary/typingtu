@@ -1,0 +1,43 @@
+[
+    {
+        "count":"2",
+        "content": [
+            {"type": "1","icon": "assets/icons/icon_2_1.png"},
+            {"type": "2","icon": "assets/icons/icon_2_2.png"},
+            {"type": "3","icon": "assets/icons/icon_2_3.png"},
+            {"type": "4","icon": "assets/icons/icon_2_4.png"},
+            {"type": "5","icon": "assets/icons/icon_2_5.png"},
+            {"type": "6","icon": "assets/icons/icon_2_6.png"}
+        ]
+    },
+    {
+        "count":"3",
+        "content": [
+            {"type": "1","icon": "assets/icons/icon_2_1.png"},
+            {"type": "2","icon": "assets/icons/icon_2_1.png"},
+            {"type": "3","icon": "assets/icons/icon_2_1.png"},
+            {"type": "4","icon": "assets/icons/icon_2_1.png"},
+            {"type": "5","icon": "assets/icons/icon_2_1.png"}
+        ]
+    },
+    {
+        "count":"4",
+        "content": [
+            {"type": "1","icon": "assets/icons/icon_2_1.png"},
+            {"type": "2","icon": "assets/icons/icon_2_1.png"},
+            {"type": "3","icon": "assets/icons/icon_2_1.png"},
+            {"type": "4","icon": "assets/icons/icon_2_1.png"},
+            {"type": "5","icon": "assets/icons/icon_2_1.png"}
+        ]
+    },
+    {
+        "count":"5",
+        "content": [
+            {"type": "1","icon": "assets/icons/icon_2_1.png"},
+            {"type": "2","icon": "assets/icons/icon_2_1.png"},
+            {"type": "3","icon": "assets/icons/icon_2_1.png"},
+            {"type": "4","icon": "assets/icons/icon_2_1.png"},
+            {"type": "5","icon": "assets/icons/icon_2_1.png"}
+        ]
+    }
+]

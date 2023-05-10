@@ -13,10 +13,13 @@ class TYMainPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<TYMainPage> {
+
+  // 底部导航栏选中index
   int _selectedIndex = 0;
+
+  // 首页数组
   final List _pages = [const TYQuickPuzzlePage(), const TYTemplatePuzzlePage()];
-
-
+  
   @override
   void initState() {
     super.initState();
@@ -25,12 +28,15 @@ class _MyHomePageState extends State<TYMainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // 底部导航栏
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          // 快速拼图item
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: '快速拼图',
           ),
+          // 主题模板item
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
             label: '主题模版',
